@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주희가좋아하는유튭</title>
+    <link rel = "stylesheet" type="text/css" href="{% static 'youtuber.css' %}">
+</head>
+<body>
+    <div class = "container">
+        <div class = "youtuber_container">
+            <div class = "header">
+                <div class = "header_4"><p>{{youtuber1.channel}}</p></div>
+                <div class = "header_4"><p>크리에이터 이름 : {{youtuber1.creater}}</p></div>
+                <div class = "header_4"><p>구독자 수 : {{youtuber1.subscriber}} 명</p></div>
+                <div class = "header_4">
+                    {% if youtuber1.favDegree == 1 %}
+                        <p>💛</p>
+                    {%endif%}
+                    {% if youtuber1.favDegree == 2 %}
+                        <p>💛💛</p>
+                    {%endif%}
+                    {% if youtuber1.favDegree == 3 %}
+                        <p>💛💛💛</p>
+                    {%endif%}
+                    {% if youtuber1.favDegree == 4 %}
+                        <p>💛💛💛💛</p>
+                    {%endif%}
+                    {% if youtuber1.favDegree == 5 %}
+                        <p>💛💛💛💛💛</p>
+                    {%endif%}
+                </div>
+                <div class = "header_4">
+                    {% if youtuber1.onAir == True %}
+                       <p class = "onair_on">ON-AIR</p>
+                    {% endif %}
+                    {% if youtuber1.onAir == False %}
+                        <p class = "onair_off">ON-AIR</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class = "bottom">
+                <iframe width="33%" height="100%" src="{{youtuber1.link1}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="33%" height="100%" src="{{youtuber1.link2}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="33%" height="100%" src="{{youtuber1.link3}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    
+        <div class = "youtuber_container">
+            <div class = "header">
+                <div class = "header_4"><p>{{youtuber2.channel}}</p></div>
+                <div class = "header_4"><p>크리에이터 이름 : {{youtuber2.creater}}</p></div>
+                <div class = "header_4"><p>구독자 수 : {{youtuber2.subscriber}} 명</p></div>
+                <div class = "header_4">
+                    {% if youtuber2.favDegree == 1 %}
+                        <p>💛</p>
+                    {%endif%}
+                    {% if youtuber2.favDegree == 2 %}
+                        <p>💛💛</p>
+                    {%endif%}
+                    {% if youtuber2.favDegree == 3 %}
+                        <p>💛💛💛</p>
+                    {%endif%}
+                    {% if youtuber2.favDegree == 4 %}
+                        <p>💛💛💛💛</p>
+                    {%endif%}
+                    {% if youtuber2.favDegree == 5 %}
+                        <p>💛💛💛💛💛</p>
+                    {%endif%}
+                </div>
+                <div class = "header_4">
+                    {% if youtuber2.onAir == True %}
+                       <p class = "onair_on">ON-AIR</p>
+                    {% endif %}
+                    {% if youtuber2.onAir == False %}
+                        <p class = "onair_off">ON-AIR</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class = "bottom">
+                <iframe width="33%" height="100%" src="{{youtuber2.link1}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="33%" height="100%" src="{{youtuber2.link2}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="33%" height="100%" src="{{youtuber2.link3}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+ 
+        <div class = "youtuber_container">
+            <div class = "header">
+                <div class = "header_4"><p>{{youtuber3.channel}}</p></div>
+                <div class = "header_4"><p>크리에이터 이름 : {{youtuber3.creater}}</p></div>
+                <div class = "header_4"><p>구독자 수 : {{youtuber3.subscriber}} 명</p></div>
+                <div class = "header_4">
+                    {% if youtuber3.favDegree == 1 %}
+                        <p>💛</p>
+                    {%endif%}
+                    {% if youtuber3.favDegree == 2 %}
+                        <p>💛💛</p>
+                    {%endif%}
+                    {% if youtuber3.favDegree == 3 %}
+                        <p>💛💛💛</p>
+                    {%endif%}
+                    {% if youtuber3.favDegree == 4 %}
+                        <p>💛💛💛💛</p>
+                    {%endif%}
+                    {% if youtuber3.favDegree == 5 %}
+                        <p>💛💛💛💛💛</p>
+                    {%endif%}
+                </div>
+                <div class = "header_4">
+                    {% if youtuber3.onAir == True %}
+                       <p class = "onair_on">ON-AIR</p>
+                    {% endif %}
+                    {% if youtuber3.onAir == False %}
+                        <p class = "onair_off">ON-AIR</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class = "bottom">
+                <iframe width="33%" height="100%" src="{{youtuber3.link1}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="33%" height="100%" src="{{youtuber3.link2}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="33%" height="100%" src="{{youtuber3.link3}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
