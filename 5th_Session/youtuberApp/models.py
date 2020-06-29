@@ -9,3 +9,6 @@ class Youtuber(models.Model):
     link1 = models.TextField()
     link2 = models.TextField()
     link3 = models.TextField()
+    text = models.TextField()
+    summary = models.TextField()
+    photo = models.ImageField(upload_to = "image", blank = True)

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change</title>
+    <link rel="stylesheet" href="/static/style.css?after">
+</head>
+<body>
+    <div class = "page_title"><h2>CHANGE CONTENT</h2></div>
+    <div class = "bar">
+        <a href="/">GO TO HOME</a>
+    </div>    
+    <form action="#" entype = "multipart/form-data" method="POST">
+        {% csrf_token %}
+        <p>사진</p>
+        <input type = "file" name = "photo">
+        <p>장소</p>
+        <input type = "text" name = "title">
+        <p>날짜</p>
+        <input type = "text" name = "date">
+        <input class = 'button' type="submit" value="수정">
+    </form>
+</body>
+</html>

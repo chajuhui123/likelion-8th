@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="static/style.css?after">
+</head>
+<body>
+    <div class = "page_title"><h2>Place for a Date</h2></div>
+    <div class = "bar">
+        <a href="{% url 'add' %}">ADD</a>
+    </div>
+    {% for photo in photos.all %}
+    <div class = "image" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+        <img src = "{{photo.photo.url}}" width="100%" height="360px">
+        <div class = "text">
+            {{photo.title}}<br>
+            {{photo.date}}<br>
+            <a href="{% url 'change' photo.id %}">CHANGE</a><br>
+            <a href="{% url 'delete' photo.id %}">DELETE</a>
+        </div>
+    </div>
+    {% endfor %}
+    <form action="{% url 'add' %}" method="POST">
+</body>
+<script language = "javascript">
+    console.log("우아진짜안돼 모야")
+
+
+    function zoomIn(event) {
+    event.target.style.transform = "scale(1.2)";
+    event.target.style.zIndex = 1;
+    event.target.style.transition = "all 0.5s";
+    target.children().style.display = "block"
+  }
+
+  function zoomOut(event) {
+    event.target.style.transform = "scale(1)";
+    event.target.style.zIndex = 0;
+    event.target.style.transition = "all 0.5s";
+    target.children().style.display = "none"
+  }
+</script>    
+</html>

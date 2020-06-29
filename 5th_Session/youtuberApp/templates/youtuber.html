@@ -8,6 +8,7 @@
     <link rel = "stylesheet" type="text/css" href="{% static 'youtuber.css' %}">
 </head>
 <body>
+    {% for youtuber1 in youtuber %}
     <div class = "container">
         <div class = "youtuber_container">
             <div class = "header">
@@ -45,85 +46,14 @@
                 <iframe width="33%" height="100%" src="{{youtuber1.link2}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <iframe width="33%" height="100%" src="{{youtuber1.link3}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-        </div>
-    
-        <div class = "youtuber_container">
-            <div class = "header">
-                <div class = "header_4"><p>{{youtuber2.channel}}</p></div>
-                <div class = "header_4"><p>크리에이터 이름 : {{youtuber2.creater}}</p></div>
-                <div class = "header_4"><p>구독자 수 : {{youtuber2.subscriber}} 명</p></div>
-                <div class = "header_4">
-                    {% if youtuber2.favDegree == 1 %}
-                        <p>💛</p>
-                    {%endif%}
-                    {% if youtuber2.favDegree == 2 %}
-                        <p>💛💛</p>
-                    {%endif%}
-                    {% if youtuber2.favDegree == 3 %}
-                        <p>💛💛💛</p>
-                    {%endif%}
-                    {% if youtuber2.favDegree == 4 %}
-                        <p>💛💛💛💛</p>
-                    {%endif%}
-                    {% if youtuber2.favDegree == 5 %}
-                        <p>💛💛💛💛💛</p>
-                    {%endif%}
-                </div>
-                <div class = "header_4">
-                    {% if youtuber2.onAir == True %}
-                       <p class = "onair_on">ON-AIR</p>
-                    {% endif %}
-                    {% if youtuber2.onAir == False %}
-                        <p class = "onair_off">ON-AIR</p>
-                    {% endif %}
-                </div>
-            </div>
-            <div class = "bottom">
-                <iframe width="33%" height="100%" src="{{youtuber2.link1}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="33%" height="100%" src="{{youtuber2.link2}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="33%" height="100%" src="{{youtuber2.link3}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <a href = "{% url 'detail' youtuber1.id %}">자세히 보기</a>
+            <div class = "button_box">
+                <button class = "button" name = "change">수정</button>
+                <button class = "button" name = "delete">삭제</button>
             </div>
         </div>
- 
-        <div class = "youtuber_container">
-            <div class = "header">
-                <div class = "header_4"><p>{{youtuber3.channel}}</p></div>
-                <div class = "header_4"><p>크리에이터 이름 : {{youtuber3.creater}}</p></div>
-                <div class = "header_4"><p>구독자 수 : {{youtuber3.subscriber}} 명</p></div>
-                <div class = "header_4">
-                    {% if youtuber3.favDegree == 1 %}
-                        <p>💛</p>
-                    {%endif%}
-                    {% if youtuber3.favDegree == 2 %}
-                        <p>💛💛</p>
-                    {%endif%}
-                    {% if youtuber3.favDegree == 3 %}
-                        <p>💛💛💛</p>
-                    {%endif%}
-                    {% if youtuber3.favDegree == 4 %}
-                        <p>💛💛💛💛</p>
-                    {%endif%}
-                    {% if youtuber3.favDegree == 5 %}
-                        <p>💛💛💛💛💛</p>
-                    {%endif%}
-                </div>
-                <div class = "header_4">
-                    {% if youtuber3.onAir == True %}
-                       <p class = "onair_on">ON-AIR</p>
-                    {% endif %}
-                    {% if youtuber3.onAir == False %}
-                        <p class = "onair_off">ON-AIR</p>
-                    {% endif %}
-                </div>
-            </div>
-            <div class = "bottom">
-                <iframe width="33%" height="100%" src="{{youtuber3.link1}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="33%" height="100%" src="{{youtuber3.link2}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="33%" height="100%" src="{{youtuber3.link3}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-
     </div>
-    
+    {% endfor %}
+    <a href="{% url 'new' %}">새로만들기</a>
 </body>
 </html>

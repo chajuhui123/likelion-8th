@@ -1,11 +1,29 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Youtuber
 
 # Create your views here.
 
 def youtuber(request):
-    youtuber1 = Youtuber.objects.get(id=1)
-    youtuber2 = Youtuber.objects.get(id=2)
-    youtuber3 = Youtuber.objects.get(id=3)
+    youtuber = Youtuber.objects.all()
+    return render(request,'youtuber.html',{'youtuber' : youtuber})
 
-    return render(request,'youtuber.html',{'youtuber1' : youtuber1, 'youtuber2':youtuber2, 'youtuber3' : youtuber3})
+def detail(request,detail_id):
+    detail = get_object_or_404(Youtuber, pk = detail_id)
+    return render(request, 'detail.html',{'content':detail})
+
+def create(request):
+    Youtube = Youtuber()
+    Youtube.channel = request.POST['name']
+    Youtube.creater = request.POST['creator']
+    Youtube.subscriber = request.POST['subscribe_num']
+    Youtube.link1 = request.POST['youtube_link1']
+    Youtube.link2 = request.POST['youtube_link2']
+    Youtube.link3 = request.POST['youtube_link3']
+    Youtube.summary = request.POST['summary']
+    Youtube.text = request.POST['text']
+    Youtube.onAir = request.POST['choices']
+    Youtube.save()
+    return redirect("youtuberList")
+
+def new(request):
+    return render(request, "create.html")

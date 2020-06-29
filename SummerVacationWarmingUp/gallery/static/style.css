@@ -1,0 +1,48 @@
+body{
+    margin:0;
+}
+
+.page_title{
+    padding: 50px;
+    background-color: burlywood;
+    color: white;
+    text-align: center;
+    font-family: cursive;
+}
+.bar{
+    padding: 30px;
+    background-color: burlywood;
+    color: white;
+    text-align: center;
+    font-family: cursive;
+    text-decoration: none;
+}
+a:link{
+    color : white;
+    text-decoration: none;
+
+}
+a:visited{
+    color : white;
+    text-decoration: none;
+
+}
+a:hover{
+    color : rgb(142, 117, 85);
+    text-decoration: none;
+
+}
+
+.image{
+    position: relative;
+    float: left;
+    width: 25%;
+    height: 360px;
+}
+
+.image .text{
+    position : absolute;
+    top:40px;
+    left:40px;
+    color: rgb(255, 255, 255);
+}
