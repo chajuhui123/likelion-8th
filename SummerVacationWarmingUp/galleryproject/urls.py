@@ -15,18 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-import gallery.views
+from gallery import views
 from django.conf.urls.static import static
 from django.conf.urls import include, url
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',gallery.views.home, name = 'home'),
-    path('detail/<int:detail_id>',gallery.views.detail, name="detail"),
-    path('add/',gallery.views.add, name = "add"),
-    path('change/<int:change_id>',gallery.views.change,name ="change"),
-    path('delete/<int:delete_id>',gallery.views.delete,name="delete"),
+    path('', views.home, name = 'home'),
+    path('detail/<int:detail_id>', views.detail, name="detail"),
+    path('add/', views.add, name = "add"),
+    path('change/<int:change_id>', views.change,name ="change"),
+    path('delete/<int:delete_id>', views.delete,name="delete"),
     ]
 
 if settings.DEBUG:
