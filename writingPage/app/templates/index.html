@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+    body{
+        margin: 0px;
+        text-align: center;
+        }
+    .container{
+        width: 100%;
+        height:700px;
+        display: flex;
+        flex-direction:column;
+    }
+    .top{
+        height : 100px;
+        width : 100%;
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(121, 121, 121);
+        color: white;
+        }
+    .bottom{
+        height: 600px;
+        width: 100%;
+    }
+    .webTitle{
+        height: 100px;
+        width: 33%; 
+        line-height : 60px; 
+        }
+    .search{
+        height : 100px;
+        width: 33%;
+        top : 50%;
+        margin-top: 30px;
+        
+            }
+    .userName{
+        height: 100px;
+        width :33%;
+        line-height : 60px; 
+        }
+    a:link{
+        color: black; text-decoration: none;
+    }
+    a:visited{
+        color:black; text-decoration: none;
+    }
+    a:hover{
+        color: grey; text-decoration: none;
+    }
+</style>
+</head>
+<body>
+<div class = container>
+    <div class = top>
+        <div class = webTitle><h1>공유일기</h1></div>
+        <div class = search><form action= "{% url 'result' %}" method="GET">
+        <input type="text" name="query" value="{{query}}" placeholder = "무엇을 검색할까요?"><br>
+            <label><input type="checkbox"  value = "all" name="setting" checked>전체</label>
+            <label><input type="checkbox"  value = "author" name="setting">작성자</label>
+            <label><input type="checkbox" id="inlineCheckbox2" value = "title" name="setting">제목</label>
+            <label><input type="checkbox" id="inlineCheckbox3" value = "text" name="setting">내용</label>
+        </form>
+        </div>
+        <div class = userName><p>{{user}}님 안녕하세요 :)</p></div>
+    </div>
+    <div class = bottom>
+        {% for i in writing_list %}
+        <a href="{% url 'detail' i.id %}">
+            <h1>글 제목 :  {{i.title}}</h1>
+            <p>글쓴이 : {{i.author}}</p>
+        </a>
+        <br>
+        {% endfor %}
+        <br>
+    
+    <div class = writingPost><button style="background-color: rgb(121, 121, 121); padding: 10px 100px; float: right; margin-right: 30px;"><a href = "{% url 'create' %}" style="color: white;">글 작성</a></button></div>
+    </div>
+</div>
+</body>
+</html>
