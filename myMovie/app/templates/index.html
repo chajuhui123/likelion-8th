@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBA</title>
+    <link href="{% static 'CSS/index.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class = "title">Healing by Animation</div>
+    <br><br>
+    <div id = "contents"></div>
+    
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="nameContents">Yes-People</div>
+          <div class="yearContents">2020</div>
+          <img src="{% static 'IMAGE/yes.jpg' %}" style="width: 800px; height:500px;">
+        </div>
+        
+
+        <div class="mySlides fade">
+            <div class="nameContents">Away</div>
+            <div class="yearContents">2019</div>
+          <img src="{% static 'IMAGE/away.jpg' %}" style="width: 800px; height:500px;">
+        </div>
+        
+        <div class="mySlides fade">
+          <!-- <div class="text">3</div> -->
+          <div class="nameContents">One Left</div>
+          <div class="yearContents">2020</div>
+          <img src="{% static 'IMAGE/1min.PNG' %}" style="width: 800px; height:500px;">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="nameContents">Way of Sylvie</div>
+            <div class="yearContents">2019</div>
+            <img src="{% static 'IMAGE/WHITE.PNG' %}" style="width: 800px; height:500px;">
+          </div>
+
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span>
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+
+    <script src="{% static 'JS/index.js' %}" type="text/javascript"></script>
+</body>
+</html>
