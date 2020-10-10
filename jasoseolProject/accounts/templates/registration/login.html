@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>로그인페이지</h1>
+    <form method="POST" action="">
+    {% csrf_token %}
+    {{form}}
+    <!-- urls.py에서 자동으로 적용되는 form -->
+    <input type="submit" value="로그인">
+    <!-- 로그인되고나서 성공적이면 인덱스로 넘어가게함 이건 settings.py에서 관리 -->
+    </form>
+</body>
+</html>

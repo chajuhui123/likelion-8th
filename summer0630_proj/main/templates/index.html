@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+    <h1>하이</h1>
+    {% for i in sheets_rows %}
+        {% if i.orderId.orderId == 2 %}
+        <h3>
+            주문번호 {{i.orderId.orderId}} <br>
+            주문자 {{i.memberId.memberName}} <br>
+            상품명 {{i.goodsId.goodsName}} <br>
+            상품가격 {{i.goodsId.goodsCost}} <br>
+        </h3>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>

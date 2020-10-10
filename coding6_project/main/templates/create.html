@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뇸뇸 추가</title>
+</head>
+<body>
+    <form action = "{% url 'create' %}" method = 'POST'>
+        {% csrf_token %}
+        <p>사진</p>
+        <input type="file" name = "image">
+        <p>이름</p>
+        <input type="text" name = "title">
+        <p>설명</p>
+        <input type="text" name = "text">
+        <p>레시피</p>
+        <input type="text" name = "recipe">
+        <br>
+        <input class = "button" type="submit" value ="작성하기">
+
+    </form>
+    
+</body>
+</html>

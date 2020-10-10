@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- url에서 pk를 통해 id를 특정지어서 가져옴. 따라서 for문이 필요하지않음. -->
+    <h1> 글제목 : {{blog.title}}</h1>
+    <h2>내용 : {{blog.text}}</h2>
+    <p>글쓴이 : {{blog.author}}</p>
+    <p>작성날짜 : {{blog.time}}</p>
+    <a href = "{% url 'delete' blog.id %}">삭제하기</a>
+    <a href = "{% url 'update' blog.id %}">수정하기</a>
+</body>
+</html>

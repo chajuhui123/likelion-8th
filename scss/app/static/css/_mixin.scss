@@ -1,0 +1,36 @@
+@mixin unset {
+    all: unset;
+}
+
+@mixin link($word) {
+    text-decoration: none;
+    display: block;
+    font-size: 50px;
+    // color: $color; //괄호안에 color라는 변수를 줄 거에요
+
+    //파이썬 언어를 사용할 수 있다
+    @if $word == 'odd' {
+        color: yellow;
+    } @else {
+        color: pink;
+    }
+}
+
+@mixin responsive($device) {
+    @if $device == "iphone-X"{
+        @media only screen 
+        and (device-width : 375px) 
+        and (device-height : 812px) 
+        and (-webkit-device-pixel-ratio : 3) {
+            @content;
+        }
+    }
+    @else if $device == "iphone-8"{
+        @media only screen 
+        and (device-width : 375px) 
+        and (device-height : 667px) 
+        and (-webkit-device-pixel-ratio : 2) {
+            @content;
+    }
+    }
+}

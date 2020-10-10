@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block contents %}
+    <a href = "{% url 'add' %}" method = "POST">추가</a>
+    {% for i in home_key.all %}
+        <a href= "{% url 'detail' i.id %}">{{i.singerName}}</a>
+        <br>
+    {% endfor %}    
+{% endblock contents %}

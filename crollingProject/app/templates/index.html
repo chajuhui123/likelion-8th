@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href = "{% url 'crolling' %}" style="text-align: center;">멜론차트불러오기</a>
+    <h3 style="text-align: center;">멜론차트해킹함 ㅋ</h3>
+    {% for i in list %}
+    <img src={{i.imgScr}} width="150" height="150"><br>
+    {{ i.rankNumber }}<br>
+    {{ i.songName }}<br>
+    {{ i.singerName }}<br><br>
+    {% endfor %}
+    
+</body>
+</html>

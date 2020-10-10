@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>favSinger Change</title>
+    <style>
+    body{
+        width:100%;
+        height:100vh;
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column ;
+        }
+    </style>
+</head>
+<body>
+    <form action ="{% url 'change' change_key.id %}" method="POST">
+        {% csrf_token %}
+        <p>가수명:</p>
+        <input type = "text" name = "nameSinger" value = {{change_key.singerName}}>
+        <p>애정곡:</p>
+        <input type = "text" name = "favSong" value = {{change_key.favSongName}}>
+        <p>뽀인트:</p>
+        <input type = "text" name = "why" value = {{change_key.whyFavsinger}}>
+        <input type = "submit" value = "수정하기">
+    </form>    
+</body>
+</html>

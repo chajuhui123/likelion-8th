@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뇸뇸</title>
+</head>
+<body>
+    {% for friend in myFriends.all %}
+    <img src = "{{friend.image.url}}" width="300px" height="300px"><br>
+    {{friend.title}}<br>
+    {{friend.text}}<br>
+    <a href = "{% url 'detail' friend.id %}">자세히 보기</a>
+    <button class = "button" name = "change">수정</button>
+    <button class = "button" name = "delete">삭제</button>
+    <br>
+    {% endfor %}
+    <a href="{% url 'new' %}">새로만들기</a>
+</body>
+</html>

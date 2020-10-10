@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method = "POST">
+        {% csrf_token %}
+        <h1>글쓰기</h1>
+        <!-- 나중에 바꿀 수 있다. form 변수명! 알고싶다면 찾아보라 -->
+        {{form.as_p}}
+        <input type = "submit" value ="작성하기">    
+    </form>
+    
+</body>
+</html>

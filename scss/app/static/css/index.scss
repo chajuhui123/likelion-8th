@@ -1,0 +1,70 @@
+@charset 'utf-8';
+@import "_variables";
+// _variables.scss를 import해줌
+@import "_mixin";
+@import "_button";
+
+// 바디 안의 모든 요소들을 초기화 시켜줌. 꿀 팁 >_<
+// button도 p태그처럼~!
+// body > * {
+//     all : unset;
+// }
+
+// button{
+//     color: $mainColor;
+//     font-size: $mainFontSize;
+// }
+
+// .box{
+//     margin: 30px;
+//     h1{
+//         font-size: 100px;
+//     }
+//     button{
+//         color: green;
+//     }
+//     & :hover{
+//        background-color: black; 
+//     }
+// }
+
+// button{
+//     @include unset;
+//     color: $mainColor;
+//     font-size: $mainFontSize;
+// }
+
+// a{
+//     margin-bottom: 10px;
+//     &:nth-child(odd){
+//         @include link('odd');
+//     }
+//     &:nth-child(even){
+//         @include link('even');
+//     }
+// }
+
+// a{
+//     @extend %button;
+//     text-decoration: none;
+// }
+
+// button{
+//     @extend %button;
+//     border: none;
+// }
+
+
+//media query ~~~ 에서 해당 해상도를 찾아보아요
+//https://www.websitehelper.co.uk/css-media-queries-for-tablets-mobiles/
+
+h1{
+    color: red;
+    @include responsive("iphone-X"){
+        color: palevioletred;
+    }
+    
+    @include responsive("iphone-8"){
+        color: plum;
+    }
+}
